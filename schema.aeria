@@ -1,0 +1,28 @@
+// teste
+collection Pet {
+  icon "test"
+  owned true
+
+  properties {
+    name str @teste(true)
+    joao Person @teste(true)
+  }
+
+  // keyed list
+  indexes {
+    // aaa
+    banana
+  }
+
+  required {
+    teste
+  }
+
+  search {
+    placeholder "Teste"
+    indexes {
+      teste
+    }
+  }
+}
+
