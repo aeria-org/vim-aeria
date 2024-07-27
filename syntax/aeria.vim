@@ -46,7 +46,7 @@ hi def link aeriaCollectionFunctionsDelim Delimiter
 hi def link aeriaCollectionFunctionOptionalOperator Operator
 
 " collection.search
-syn region aeriaCollectionSearch matchgroup=aeriaCollectionSearchDelim start=/\v<search\s*\{/ end=/}/ contains=aeriaComment,@aeriaConstant,aeriaCollectionSearchIndexes,aeriaCollectionSearchPlaceholder transparent
+syn region aeriaCollectionSearch matchgroup=aeriaCollectionSearchDelim start=/\v<search\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionSearchIndexes,aeriaCollectionSearchPlaceholder transparent
 syn region aeriaCollectionSearchIndexes matchgroup=aeriaCollectionSearchIndexesDelim start=/\vindexes\s*\{/ end=/}/ contains=aeriaComment,aeriaString transparent
 syn match aeriaCollectionSearchPlaceholder "\v<placeholder>" nextgroup=aeriaString skipwhite
 
@@ -56,7 +56,7 @@ hi def link aeriaCollectionSearchPlaceholder Keyword
 
 " collection
 syn region aeriaKeyedList matchgroup=aeriaKeyedListDelim start=/\v<(form|filters|immutable|indexes|presets|required|table|tableMeta|writable)\s*\{/ end=/}/ contains=aeriaComment,aeriaString transparent
-syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\s+\w*(\s+extends\s+\w+)?\s*\{/ end=/}/ contains=aeriaComment,@aeriaConstant,aeriaProperties,aeriaKeyedList,aeriaCollectionModifierName,aeriaCollectionFunctions,aeriaCollectionSearch transparent
+syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\s+\w*(\s+extends\s+\w+)?\s*\{/ end=/}/ contains=aeriaComment,aeriaProperties,aeriaKeyedList,aeriaCollectionModifierName,aeriaCollectionFunctions,aeriaCollectionSearch transparent
 syn match aeriaCollectionModifierName "\v<(owned|timestamps|icon)" nextgroup=@aeriaConstant skipwhite
 
 hi def link aeriaKeyedListDelim Delimiter
