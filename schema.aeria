@@ -1,11 +1,14 @@
-// teste
-collection Pet {
+collection Pet extends Test {
   icon "test"
   owned true
 
   properties {
-    name str @teste(true)
-    joao Person @teste(true)
+    name []str @teste(true)
+    nested []{
+      properties {
+        flag bool
+      }
+    }
   }
 
   // keyed list
@@ -23,6 +26,12 @@ collection Pet {
     indexes {
       teste
     }
+  }
+}
+
+collection Pet {
+  properties {
+    name str
   }
 }
 
