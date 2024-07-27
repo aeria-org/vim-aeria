@@ -1,31 +1,31 @@
 collection Pet extends Test {
   icon "test"
   owned true
-
   properties {
     name []str @teste(true)
+    age int
     nested []{
       properties {
         flag bool
       }
     }
   }
-
   // keyed list
   indexes {
     // aaa
     banana
   }
-
   required {
     teste
   }
-
   search {
     placeholder "Teste"
     indexes {
       teste
     }
+  }
+  functions {
+    teste? @expose(true)
   }
 }
 
