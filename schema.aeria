@@ -1,15 +1,15 @@
 collection Pet extends Test {
   icon "test"
-  owned true
-  properties {
-    name []str @teste(true)
-    age int
-    nested []{
-      properties {
-        flag bool
-      }
+    owned true
+    properties {
+      name []str @teste(true)
+        age int
+        nested []{
+          properties {
+            flag bool
+          }
+        }
     }
-  }
   // keyed list
   indexes {
     // aaa
@@ -20,12 +20,19 @@ collection Pet extends Test {
   }
   search {
     placeholder "Teste"
-    indexes {
-      teste
-    }
+      indexes {
+        teste
+      }
   }
   functions {
     teste? @expose(true)
+  }
+  layout {
+    name "teste"
+      options {
+        title aa
+        translateBadge true
+      }
   }
 }
 
