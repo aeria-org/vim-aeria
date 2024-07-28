@@ -1,8 +1,10 @@
-collection Pet extends Test {
+collection User extends aeria.user {}
+
+collection Test {
   icon "dog"
   owned true
   properties {
-    name []str @teste(true)
+    name []str
     age int
     picture File @accept(["image/*"])
     nested []{

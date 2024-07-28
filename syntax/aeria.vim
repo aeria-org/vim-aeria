@@ -85,7 +85,7 @@ hi def link aeriaCollectionSearchPlaceholder Keyword
 
 " collection
 syn region aeriaKeyedList matchgroup=aeriaKeyedListDelim start=/\v<(form|filters|immutable|indexes|presets|required|table|tableMeta|writable)\s*\{/ end=/}/ contains=aeriaComment,aeriaIdentifier,@aeriaAttributeCluster transparent fold
-syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\s+\w*(\s+extends\s+\w+)?\s*\{/ end=/}/ transparent fold contains=
+syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\s+\w*(\s+extends\s+\w+\.\w+)?\s*\{/ end=/}/ transparent fold contains=
   \ aeriaComment,
   \ aeriaProperties,
   \ aeriaKeyedList,
@@ -93,7 +93,7 @@ syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\
   \ aeriaCollectionFunctions,
   \ aeriaCollectionLayout,
   \ aeriaCollectionSearch transparent
-syn match aeriaCollectionModifierName "\v<(owned|timestamps|icon)" nextgroup=@aeriaConstant skipwhite
+syn match aeriaCollectionModifierName "\v<(owned|timestamps|icon)>" nextgroup=@aeriaConstant skipwhite
 
 hi def link aeriaKeyedListDelim Delimiter
 hi def link aeriaCollectionDelim Delimiter

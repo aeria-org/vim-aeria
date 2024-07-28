@@ -13,7 +13,6 @@ function! AeriaIndent(lnum) abort
     return 0
   endif
 
-
   let prevl = substitute(getline(prevlnum), '//.*$', '', '')
   let currl = substitute(getline(a:lnum), '//.*$', '', '')
   let previ = indent(prevlnum)
