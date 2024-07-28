@@ -1,44 +1,41 @@
 collection Pet extends Test {
-  icon "test"
-    owned true
-    properties {
-      name []str @teste(true)
-        age int
-        nested []{
-          properties {
-            flag bool
-          }
-        }
+  icon "dog"
+  owned true
+  properties {
+    name []str @teste(true)
+    age int
+    picture File @accept(["image/*"])
+    nested []{
+      properties {
+        flag bool
+      }
     }
+  }
   // keyed list
   indexes {
-    // aaa
-    banana
+    // comment test
+    name
   }
   required {
-    teste
+    name
   }
   search {
     placeholder "Teste"
-      indexes {
-        teste
-      }
+    indexes {
+      name
+    }
   }
   functions {
-    teste? @expose(true)
+    get @expose
+    getAll @expose
+    custom? @expose(true)
   }
   layout {
-    name "teste"
-      options {
-        title aa
-        translateBadge true
-      }
-  }
-}
-
-collection Pet {
-  properties {
-    name str
+    name "grid"
+    options {
+      title name
+      picture picture
+    }
   }
 }
 

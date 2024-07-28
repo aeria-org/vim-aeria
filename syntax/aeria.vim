@@ -23,8 +23,8 @@ hi def link aeriaAttribute Function
 hi def link aeriaAttributeShorthand Function
 
 " properties
-syn region aeriaProperties matchgroup=aeriaPropertiesDelim start=/\v<(properties|additionalProperties)\s*\{/ end=/}/ contains=aeriaComment,aeriaPropertyName transparent
-syn region aeriaPropertyObjectType matchgroup=aeriaPropertyObjectTypeDelim start=/{/ end=/}/ contains=aeriaComment,aeriaProperties transparent
+syn region aeriaProperties matchgroup=aeriaPropertiesDelim start=/\v<(properties|additionalProperties)\s*\{/ end=/}/ contains=aeriaComment,aeriaPropertyName transparent fold
+syn region aeriaPropertyObjectType matchgroup=aeriaPropertyObjectTypeDelim start=/{/ end=/}/ contains=aeriaComment,aeriaProperties transparent fold
 syn match aeriaPropertyArrayOperator "\[\]" nextgroup=@aeriaPropertyColumn skipwhite
 syn match aeriaPropertyIdentifier "\v[A-Z]\w+" nextgroup=@aeriaAttributeCluster skipwhite
 syn match aeriaPropertyType /\v<(str|num|int|bool|enum|const)>/ nextgroup=@aeriaAttributeCluster skipwhite
@@ -38,7 +38,7 @@ hi def link aeriaPropertyType Type
 hi def link aeriaPropertyIdentifier Identifier
 
 " collection.functions
-syn region aeriaCollectionFunctions matchgroup=aeriaCollectionFunctionsDelim start=/\v<functions\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionFunctionName transparent
+syn region aeriaCollectionFunctions matchgroup=aeriaCollectionFunctionsDelim start=/\v<functions\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionFunctionName transparent fold
 syn match aeriaCollectionFunctionOptionalOperator "?" nextgroup=@aeriaAttributeCluster skipwhite
 syn match aeriaCollectionFunctionName /\v\w+/ nextgroup=aeriaCollectionFunctionOptionalOperator,@aeriaAttributeCluster skipwhite
 
@@ -46,8 +46,8 @@ hi def link aeriaCollectionFunctionsDelim Delimiter
 hi def link aeriaCollectionFunctionOptionalOperator Operator
 
 " collection.layout
-syn region aeriaCollectionLayout matchgroup=aeriaCollectionLayoutDelim start=/\v<layout\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionLayoutOptions,aeriaCollectionLayoutName transparent
-syn region aeriaCollectionLayoutOptions matchgroup=aeriaCollectionLayoutOptionsDelim start=/\v<options\s*\{/ end=/}/ contains=
+syn region aeriaCollectionLayout matchgroup=aeriaCollectionLayoutDelim start=/\v<layout\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionLayoutOptions,aeriaCollectionLayoutName transparent fold
+syn region aeriaCollectionLayoutOptions matchgroup=aeriaCollectionLayoutOptionsDelim start=/\v<options\s*\{/ end=/}/ transparent fold contains=
   \ aeriaComment,
   \ aeriaCollectionLayoutOptionsTitle,
   \ aeriaCollectionLayoutOptionsPicture,
@@ -75,8 +75,8 @@ hi def link aeriaCollectionLayoutOptionsActive Keyword
 hi def link aeriaCollectionLayoutOptionsTranslateBadge Keyword
 
 " collection.search
-syn region aeriaCollectionSearch matchgroup=aeriaCollectionSearchDelim start=/\v<search\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionSearchPlaceholder,aeriaCollectionSearchIndexes transparent
-syn region aeriaCollectionSearchIndexes matchgroup=aeriaCollectionSearchIndexesDelim start=/\v<indexes\s*\{/ end=/}/ contains=aeriaComment,aeriaIdentifier transparent
+syn region aeriaCollectionSearch matchgroup=aeriaCollectionSearchDelim start=/\v<search\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionSearchPlaceholder,aeriaCollectionSearchIndexes transparent fold
+syn region aeriaCollectionSearchIndexes matchgroup=aeriaCollectionSearchIndexesDelim start=/\v<indexes\s*\{/ end=/}/ contains=aeriaComment,aeriaIdentifier transparent fold
 syn match aeriaCollectionSearchPlaceholder "\v<placeholder>" nextgroup=aeriaString skipwhite
 
 hi def link aeriaCollectionSearchDelim Delimiter
@@ -84,8 +84,8 @@ hi def link aeriaCollectionSearchIndexesDelim Delimiter
 hi def link aeriaCollectionSearchPlaceholder Keyword
 
 " collection
-syn region aeriaKeyedList matchgroup=aeriaKeyedListDelim start=/\v<(form|filters|immutable|indexes|presets|required|table|tableMeta|writable)\s*\{/ end=/}/ contains=aeriaComment,aeriaIdentifier,@aeriaAttributeCluster transparent
-syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\s+\w*(\s+extends\s+\w+)?\s*\{/ end=/}/ contains=
+syn region aeriaKeyedList matchgroup=aeriaKeyedListDelim start=/\v<(form|filters|immutable|indexes|presets|required|table|tableMeta|writable)\s*\{/ end=/}/ contains=aeriaComment,aeriaIdentifier,@aeriaAttributeCluster transparent fold
+syn region aeriaCollection matchgroup=aeriaCollectionDelim start=/\v<collection\s+\w*(\s+extends\s+\w+)?\s*\{/ end=/}/ transparent fold contains=
   \ aeriaComment,
   \ aeriaProperties,
   \ aeriaKeyedList,
