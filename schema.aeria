@@ -3,6 +3,7 @@ collection User extends aeria.user {}
 collection Test {
   icon "dog"
   owned true
+
   properties {
     name []str
     age int
