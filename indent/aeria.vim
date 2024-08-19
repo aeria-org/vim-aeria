@@ -19,11 +19,11 @@ function! AeriaIndent(lnum) abort
 
   let ind = previ
 
-  if prevl =~ '[({]\s*$'
+  if prevl =~ '[({\[]\s*$'
     let ind += shiftwidth()
   endif
 
-  if currl =~ '^\s*[)}]'
+  if currl =~ '^\s*[)}\]]'
     let ind -= shiftwidth()
   endif
 
