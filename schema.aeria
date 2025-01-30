@@ -1,9 +1,12 @@
 collection User extends aeria.user {}
 
+functionsset Readable {
+  get @expose
+}
+
 collection Test {
   icon "dog"
   owned true
-
   properties {
     name []str
     age int
@@ -19,9 +22,6 @@ collection Test {
     // comment test
     name
   }
-  required {
-    name
-  }
   search {
     placeholder "Teste"
     indexes {
@@ -29,6 +29,7 @@ collection Test {
     }
   }
   functions {
+    include(Readable)
     get @expose
     getAll @expose
     custom? @expose(true)
