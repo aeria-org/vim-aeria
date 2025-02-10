@@ -102,8 +102,8 @@ hi def link aeriaKeyedListDelim Delimiter
 hi def link aeriaCollectionDelim Delimiter
 hi def link aeriaCollectionModifierName Keyword
 
-syn region aeriaFunctionsSet matchgroup=aeriaFunctionsSetDelim start=/\v<functionsset>\s+\w+\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionFunctionName transparent fold
-hi def link aeriaFunctionsSetDelim Delimiter
+syn region aeriaFunctionSet matchgroup=aeriaFunctionSetDelim start=/\v<functionset>\s+\w+\s*\{/ end=/}/ contains=aeriaComment,aeriaCollectionFunctionName transparent fold
+hi def link aeriaFunctionSetDelim Delimiter
 
 let b:current_syntax = "aeria"
 
